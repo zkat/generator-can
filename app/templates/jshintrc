@@ -1,21 +1,32 @@
 {
-    "node": true,
-    "esnext": true,
-    "bitwise": true,
-    "camelcase": true,
-    "curly": true,
+    // No type coercion comparisons...
     "eqeqeq": true,
+    // ...unless it's == null
+    "eqnull": true,
+    // require {} after if/else/for/when
+    "curly": true,
+    // Require () around IIFEs
     "immed": true,
-    "indent": 4,
+    // allow something && something()
+    "expr": true,
+    // prohibit using a variable before it's defined
     "latedef": true,
+    // require functions used with new to be capitalized
     "newcap": true,
-    "noarg": true,
-    "quotmark": "single",
-    "regexp": true,
+    // prohibit undeclared variables
     "undef": true,
-    "unused": true,
-    "strict": true,
-    "trailing": true,
-    "smarttabs": true,
-    "white": true
-}
+    // prohibit unused variables (unused arguments are ok)
+    "unused": "vars",
+    // Maximum nesting depth
+    "maxdepth": 4,
+    // assume we're running in a browser
+    "browser": true,
+    // allow console, etc.
+    "devel": true,
+    // assume we're using jQuery
+    "jquery": true,
+    // Expected global vars
+    "globals": {
+        "steal": true
+    }
+} 
