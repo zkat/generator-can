@@ -1,0 +1,1 @@
+steal("../src/components/example_component/test.js","../src/controls/example_control/test.js","../src/models/example_model/test.js");

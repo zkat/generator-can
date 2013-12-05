@@ -2,7 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
-
+var fs = require("fs");
 
 var CanGenerator = module.exports = function CanGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
@@ -16,35 +16,57 @@ var CanGenerator = module.exports = function CanGenerator(args, options, config)
 
 util.inherits(CanGenerator, yeoman.generators.Base);
 
-CanGenerator.prototype.askFor = function askFor() {
+CanGenerator.prototype.getAppName = function getAppName() {
   var cb = this.async();
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
-
-  var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
-  }];
-
-  this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
-
+  this.prompt([{
+	  name: "appName",
+	  type: "input",
+	  message: "What should the app be called?",
+	  filter: function(x) { return x.trim(); },
+	  validate: function(x) { return /[a-z]+/i.test(x); }
+  }], function(props) {
+	this.opts = props;
     cb();
   }.bind(this));
 };
 
-CanGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
-
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
+CanGenerator.prototype.basicFiles = function basicFiles() {
+  this.copy("gitignore", ".gitignore");
+  this.template('_package.json', 'package.json');
+  this.template('_bower.json', 'bower.json');
+  this.copy("editorconfig", ".editorconfig");
+  this.copy("jshintrc", ".jshintrc");
 };
 
-CanGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
+CanGenerator.prototype.gruntFiles = function gruntFiles() {
+  this.template("Gruntfile.js", "Gruntfile.js", {
+    mainPage: "<%= mainPage %>",
+    buildDir: "<%= buildDir %>",
+    version: "<%= version %>"
+  });
+  this.directory("tasks");
+};
+
+CanGenerator.prototype.docFiles = function docFiles() {
+  this.template("README.md", "README.md");
+  this.directory("doc", "doc");
+};
+
+CanGenerator.prototype.stealFiles = function stealFiles() {
+  this.template("stealconfig.js", "stealconfig.js");
+  fs.symlinkSync(this.destinationRoot()+"/bower_components/steal",
+                 this.destinationRoot()+"/steal");
+};
+
+CanGenerator.prototype.testFiles = function testFiles() {
+  this.directory("test", "test");
+  // TODO - look into getting rid of these. Or at least organizing them
+  // better. Maybe put them inside test/?
+  this.directory("funcunit", "funcunit");
+  this.directory("qunit", "qunit");
+};
+
+CanGenerator.prototype.srcDir = function srcDir() {
+  this.directory("src", "src");
 };

@@ -1,6 +1,24 @@
 {
-  "name": "package",
+  "name": "<%= opts.appName %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "authors": [
+      "you"
+  ],
+  "description": "Things",
+  "main": "js",
+  "keywords": [
+    "n/a"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "canjs": "git://github.com/bitovi/canjs.git#v2.0.3",
+    "steal": "git://github.com/bitovi/steal.git#c735373a007652d1e12d6e49e183834e4b29a910",
+    "jquery": "git://github.com/bitovi/jquerypp.git#150a38499db08ff2da01bb7ccea5940d1cae3758",
+    "canui": "git://github.com/bitovi/canui.git#cd2f476448bd3998a5fd5623533c22857b486fbb",
+    "funcunit": "git://github.com/bitovi/funcunit.git#dc38ef7a13b9219eb71229de44817e6c7012c715",
+    "qunit": "~1.12.0"
+  },
+  "resolutions": {
+    "jquery": "150a38499db08ff2da01bb7ccea5940d1cae3758"
+  }
 }
-
