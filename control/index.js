@@ -6,7 +6,9 @@ var ControlGenerator = module.exports = function ControlGenerator(args, options,
   // By calling `NamedBase` here, we get the argument to the subgenerator call
   // as `this.name`.
   yeoman.generators.NamedBase.apply(this, arguments);
-  this.destinationRoot("src/controls/"+this.name);
+  this.dashedName = this.name.replace("_", "-");
+  this.underscoredName = this.name.replace("-", "_");
+  this.destinationRoot("src/controls/"+this.underscoredName);
   this.mkdir(this.destinationRoot());
 };
 
