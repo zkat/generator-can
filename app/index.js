@@ -61,10 +61,6 @@ CanGenerator.prototype.stealFiles = function stealFiles() {
 
 CanGenerator.prototype.testFiles = function testFiles() {
 	this.directory("test", "test");
-	// TODO - look into getting rid of these. Or at least organizing them
-	// better. Maybe put them inside test/?
-	this.directory("funcunit", "funcunit");
-	this.directory("qunit", "qunit");
 };
 
 CanGenerator.prototype.srcDir = function srcDir() {
