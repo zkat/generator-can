@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "description": "A generator for Yeoman",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "canjs",
+    "can",
+    "mvc",
+    "component",
+    "amd"
   ],
   "homepage": "https://github.com/zkat/generator-can",
   "bugs": "https://github.com/zkat/generator-can/issues",
