@@ -33,10 +33,13 @@ CanGenerator.prototype.getAppName = function getAppName() {
 
 CanGenerator.prototype.basicFiles = function basicFiles() {
 	this.copy("gitignore", ".gitignore");
-	this.template('_package.json', 'package.json');
-	this.template('_bower.json', 'bower.json');
 	this.copy("editorconfig", ".editorconfig");
 	this.copy("jshintrc", ".jshintrc");
+};
+
+CanGenerator.prototype.depsFiles = function depsFiles() {
+	this.template('_package.json', 'package.json');
+	this.template('_bower.json', 'bower.json');
 };
 
 CanGenerator.prototype.gruntFiles = function gruntFiles() {
