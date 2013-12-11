@@ -62,13 +62,13 @@ grunt.initConfig({
 
     build: {
         options: {
-            steal: './bower_components/steal/js',
-            buildjs: './bower_components/steal/buildjs',
+            steal: './node_modules/.bin/steal',
+            buildjs: 'build',
 			productionSteal: './bower_components/steal/steal.production.js',
             log: true
         },
         app: {
-			entryPoint: './src/<%= mainPage %>.html',
+			entryPoint: './src/<%= mainPage %>.js',
 			to: 'src',
 			targets: {
 				js: '<%= mainPage %>.js',

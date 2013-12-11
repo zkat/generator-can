@@ -8,6 +8,7 @@ steal(
 	"src/components/example_component",
 	"./app.less",
 function($, can, ExampleControl, ExampleModel) {
+	if (steal.isBuilding) { return; }
 
 	$("body").append(can.view("#body-template", {
 		model: model
