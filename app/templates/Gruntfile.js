@@ -19,7 +19,8 @@ grunt.initConfig({
 	buildDir: "./build",
 	version: execSync("git describe --always --tag"),
 
-	clean: ["<%= buildDir %>", "<%= mainPage %>.tgz"],
+	clean: ["<%= buildDir %>", "<%= mainPage %>.tgz",
+			"src/production.js", "src/production.css"],
 
 	testee: {
 		local: {
