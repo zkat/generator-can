@@ -49,6 +49,7 @@ CanGenerator.prototype.gruntFiles = function gruntFiles() {
 		version: "<%= version %>"
 	});
 	this.directory("tasks");
+	this.directory("server");
 };
 
 CanGenerator.prototype.docFiles = function docFiles() {
