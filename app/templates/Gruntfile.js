@@ -36,7 +36,10 @@ grunt.initConfig({
 			options: {
 				port: 8125,
 				directory: "./",
-				debug: true
+				middleware: require("./server"),
+				services: {
+					"/exampleService": "http://example.com"
+				}
 			}
 		}
 	},
