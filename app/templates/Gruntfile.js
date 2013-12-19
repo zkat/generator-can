@@ -9,6 +9,7 @@ grunt.loadNpmTasks("grunt-contrib-clean");
 grunt.loadNpmTasks("grunt-contrib-compress");
 grunt.loadNpmTasks("grunt-contrib-connect");
 grunt.loadNpmTasks("grunt-shell");
+grunt.loadNpmTasks("grunt-notify");
 grunt.loadNpmTasks("testee");
 
 // Project configuration.
@@ -106,6 +107,15 @@ grunt.initConfig({
 	jshint: {
 		jshintrc: ".jshintrc",
 		files: ["src/**/*.js"]
+	},
+
+	notify: {
+		buildComplete: {
+			options: {
+				title: "Build Complete",
+				message: "A tarball awaits you at <%= process.cwd() %>/<%= mainPage %>.tar.gz"
+			}
+		}
 	},
 
 	shell: {
