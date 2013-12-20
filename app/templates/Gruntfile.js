@@ -19,8 +19,9 @@ grunt.initConfig({
 	mainPage: "app",
 	buildDir: "./build",
 	version: execSync("git describe --always --tag"),
+	archive: "<%= mainPage %>.tgz",
 
-	clean: ["<%= buildDir %>", "<%= mainPage %>.tgz",
+	clean: ["<%= buildDir %>", "<%= archive %>",
 			"src/production.js", "src/production.css"],
 
 	testee: {
@@ -48,7 +49,7 @@ grunt.initConfig({
 	compress: {
 		main: {
 			options: {
-				archive: "<%= mainPage %>.tgz",
+				archive: "<%= archive %>",
 				mode: "tgz",
 				pretty: true
 			},
@@ -113,7 +114,7 @@ grunt.initConfig({
 		buildComplete: {
 			options: {
 				title: "Build Complete",
-				message: "A tarball awaits you at <%= process.cwd() %>/<%= mainPage %>.tar.gz"
+				message: "Production archive awaits you at <%= process.cwd() %>/<%= archive %>"
 			}
 		}
 	},
