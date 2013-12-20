@@ -6,7 +6,7 @@ steal("can", "./template.mustache", "./styles.less", function(can, template) {
 		}
 	}, {
 		init: function(el) {
-			el.addClass("<%= name =>");
+			el.addClass("<%= name %>");
 			el.html(template(this.options));
 		},
 		click: function() {
