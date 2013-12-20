@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8"/>
+	<title>example_control Sandbox</title>
+  </head>
+  <body>
+	<div id="main"></div>
+	<script src="../../../steal/steal.js"></script>
+	<script type="text/javascript">
+	  steal("jquery", "can", "src/controls/example_control", function($, can, Control) {
+	    new Control($("#main"));
+	  });
+	</script>
+  </body>
+</html>
