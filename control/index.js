@@ -20,4 +20,5 @@ ControlGenerator.prototype.files = function files() {
 	this.template("test.mustache", "test.mustache");
 	this.template("styles.less", "styles.less");
 	this.template("template.mustache", "template.mustache");
+	this.template("sandbox.html", "sandbox.html");
 };
