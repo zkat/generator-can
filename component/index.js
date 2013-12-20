@@ -23,5 +23,5 @@ ComponentGenerator.prototype.files = function files() {
 	this.template("test.mustache", "test.mustache");
 	this.template("styles.less", "styles.less");
 	this.template("template.mustache", "template.mustache");
-	// TODO - sandbox.html?
+	this.template("sandbox.html", "sandbox.html");
 };
