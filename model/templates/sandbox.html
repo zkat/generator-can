@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8"/>
+	<title><%= name %> Sandbox</title>
+  </head>
+  <body>
+	<script src="../../../steal/steal.js"></script>
+	<script type="text/javascript">
+	  steal("jquery", "can", "src/models/<%= name %>", function($, can, Model) {
+	    window.model = new Model();
+	  });
+	</script>
+  </body>
+</html>
