@@ -18,6 +18,7 @@ ControlGenerator.prototype.files = function files() {
 	this.template("_control.js", this.name+".js");
 	this.template("test.js", "test.js");
 	this.template("test.mustache", "test.mustache");
+	this.template("test.html", "test.html");
 	this.template("styles.less", "styles.less");
 	this.template("template.mustache", "template.mustache");
 	this.template("sandbox.html", "sandbox.html");

@@ -15,5 +15,6 @@ util.inherits(ModelGenerator, yeoman.generators.NamedBase);
 ModelGenerator.prototype.files = function files() {
 	this.template("_model.js", this.name+".js");
 	this.template("test.js", "test.js");
+	this.template("test.html", "test.html");
 	this.template("sandbox.html", "sandbox.html");
 };
