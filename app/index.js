@@ -46,6 +46,7 @@ CanGenerator.prototype.gruntFiles = function gruntFiles() {
 	this.template("Gruntfile.js", "Gruntfile.js", {
 		mainPage: "<%= mainPage %>",
 		buildDir: "<%= buildDir %>",
+		archive: "<%= archive %>",
 		version: "<%= version %>"
 	});
 	this.directory("tasks");
