@@ -36,9 +36,9 @@ module.exports = function(grunt) {
 		}
 
 		mkdir(buildDir, {intermediate: true}).then(function() {
-			return Q.all(data.map(function(page) {
+			return Q.all(data.files.map(function(page) {
 				return writePageFile(
-					page.srcFile, path.join(buildDir, page.dstFile), page.hrefs);
+					page.src[0], path.join(buildDir, page.dest), page.hrefs);
 			}));
 		}).then(function() {
 			done();

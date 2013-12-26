@@ -84,14 +84,16 @@ grunt.initConfig({
     },
 
 	pages: {
-		pages: [{
-			srcFile: "./src/<%= mainPage %>.html",
-			dstFile: "index.html",
-			hrefs: {
-				js: "<%= mainPage %>.js?v=<%= version %>",
-				css: "<%= mainPage %>.css?v=<%= version %>"
-			}
-		}]
+		all: {
+			files: [{
+				src: "./src/<%= mainPage %>.html",
+				dest: "index.html",
+				hrefs: {
+					js: "<%= mainPage %>.js?v=<%= version %>",
+					css: "<%= mainPage %>.css?v=<%= version %>"
+				}
+			}]
+		}
 	},
 
 	copy: {
