@@ -182,7 +182,7 @@ grunt.loadTasks("tasks");
 
 // Default task(s).
 grunt.registerTask('default', ['connect:server', 'test', 'build:app',
-							   'copy', 'pages', "compress"]);
+							   'copy', 'pages:all', "compress"]);
 grunt.registerTask("release", "Make a release.", function(type) {
 	grunt.task.run("default", "shell:release"+(type ?":"+type:""));
 });
