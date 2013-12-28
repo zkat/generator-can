@@ -19,7 +19,7 @@ grunt.initConfig({
 	mainPage: "app",
 	buildDir: "./build",
 	version: execSync("git describe --always --tag"),
-	archive: "<%= mainPage %>.tgz",
+	archive: "<%= mainPage %>.tar.gz",
 
 	clean: ["<%= buildDir %>", "<%= archive %>",
 			"src/production.js", "src/production.css"],
