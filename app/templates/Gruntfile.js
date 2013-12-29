@@ -188,7 +188,6 @@ grunt.registerTask("release", "Make a release.", function(type) {
 });
 grunt.registerTask("publish", ["shell:publish"]);
 grunt.registerTask("loc", ["shell:loc"]);
-grunt.registerTask("server", ["connect:server:keepalive"]);
-grunt.registerTask("serve", ["server"]);
+grunt.registerTask("serve", ["connect:server:keepalive"]);
 grunt.registerTask("test", ["generate-test-file", "jshint", "testee:local"]);
 };
